@@ -1,3 +1,5 @@
+import 'package:finswallet/providers/wallet_provider.dart';
+import 'package:finswallet/screens/account/account.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -16,6 +18,7 @@ class _MyHomeState extends State<MyHome> {
   @override
   void initState() {
     controller = MyHomeController(context);
+
     super.initState();
   }
 
@@ -36,10 +39,12 @@ class _MyHomeState extends State<MyHome> {
                   const Text(
                     'Frist Step Create Your Wallet',
                   ),
-                  // Text(
-                  //   '$_counter',
-                  //   style: Theme.of(context).textTheme.headlineMedium,
-                  // ),
+                  controller.walletProvider.ethKey?.address != null
+                      ? Text(
+                          '${controller.walletProvider.ethKey?.address}',
+                          style: Theme.of(context).textTheme.headlineMedium,
+                        )
+                      : Container(),
                   ElevatedButton(
                     onPressed: () {
                       ctrl.newWallet();
@@ -51,6 +56,15 @@ class _MyHomeState extends State<MyHome> {
                         ctrl.checkWallet();
                       },
                       child: const Text('Check')),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const Account(),
+                            ));
+                      },
+                      child: const Text('Account')),
                 ],
               ),
             ));
