@@ -16,15 +16,13 @@ class MyHomeController extends ChangeNotifier {
   void newWallet() {
     walletProvider.createWallet();
     notifyListeners();
-    // EthPrivateKey key = WalletProvider().createWallet();
     // log('privateKey : ${bytesToHex(key.privateKey)}');
     // log('address : ${key.address}');
     // log('publicKey : ${key.publicKey}');
   }
 
   void checkWallet() {
-    // Credentials credentials =
-    //     Provider.of<WalletProvider>(context, listen: false).credentials;
-    // log('address : ${credentials.address.toString()}');
+    EthPrivateKey ethPrivateKey = walletProvider.ethKey!;
+    log('privateKey : ${bytesToHex(ethPrivateKey.privateKey)}');
   }
 }

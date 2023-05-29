@@ -1,5 +1,11 @@
 // Project: eth_wallet
+import 'dart:developer';
+
+import 'package:finswallet/layouts/navbar/navbar.dart';
+import 'package:finswallet/providers/bottom_navbar.dart';
 import 'package:finswallet/providers/wallet_provider.dart';
+import 'package:finswallet/screens/account/account.dart';
+import 'package:finswallet/screens/dapp/dapp.dart';
 import 'package:finswallet/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -18,16 +24,17 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(
           create: (_) => WalletProvider(),
-        )
+        ),
+        ChangeNotifierProvider(create: (_) => BottomNavbarProvider()),
       ],
       child: MaterialApp(
-        title: 'FINS WALLET',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue[900]!),
           useMaterial3: true,
         ),
-        home: MyHome(),
+        home: const Scaffold(body: MyHome()),
       ),
+      // home: MyHome(),
     );
   }
 }

@@ -21,7 +21,13 @@ class _AccountState extends State<Account> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text(('Account'))),
+      appBar: AppBar(
+        title: const Text(('Account')),
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        titleTextStyle: TextStyle(
+            color: Theme.of(context).colorScheme.onPrimary,
+            fontSize: Theme.of(context).textTheme.titleLarge!.fontSize),
+      ),
       body: Column(children: [Text("${walletProvider.ethKey?.address}")]),
     );
   }
