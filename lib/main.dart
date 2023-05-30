@@ -1,16 +1,12 @@
 // Project: eth_wallet
-import 'dart:developer';
-
-import 'package:finswallet/layouts/navbar/navbar.dart';
 import 'package:finswallet/providers/bottom_navbar.dart';
 import 'package:finswallet/providers/wallet_provider.dart';
-import 'package:finswallet/screens/account/account.dart';
-import 'package:finswallet/screens/dapp/dapp.dart';
 import 'package:finswallet/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 

@@ -45,6 +45,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
                 ctrl.changeIndex(index);
                 log('index: $index');
               },
+              unselectedItemColor: Theme.of(context).colorScheme.secondary,
               selectedItemColor: Theme.of(context).colorScheme.primary,
             );
           },
