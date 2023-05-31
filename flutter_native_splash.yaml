@@ -1,10 +1,13 @@
 flutter_native_splash:
-  color: "#08399c"
   fullscreen: true
-  image: assets/icon/finstable-circle-logo.png
+  background_image: assets/background/finstable-bg-splash-cleanup.png
+  image: assets/icon/finstable-logo.png
+  # image_android: assets/icon/finstable-logo-splash.png
+  # background_image_android: assets/background/finstable-bg-splash-cleanup.png
+  # android_gravity: center
 
-  android_12:
-    color: "#08399c"
-    image: assets/icon/finstable-circle-logo.png
+  # android_12:
+  #   #   color: "#42a5f5"
+  #   image: assets/icon/finstable-logo-splash.png
 
   web: false
